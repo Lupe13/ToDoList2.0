@@ -7,7 +7,7 @@
         {{ todo.text }}
     </div>
     <div class="todo-controls-box"(click)="$event.stopPropagation()">
-        <div class="todo-control-button" #editBtn (click)="onEditClicked()">
+        <div class="todo-control-button" [appToolTip]="test" (click)="onEditClicked()">
             <i class="material-icons">edit</i>
         </div>
 
