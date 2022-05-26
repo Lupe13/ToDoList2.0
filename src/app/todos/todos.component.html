@@ -1,0 +1,52 @@
+<section class="heading-section">
+    <div style="display: inline-block; vertical-align: top">
+        <img class="logo" src="/assets/logo.png" />
+
+        <div style="display: inline-block">
+            <h1 class="title">ToDoList 2.0</h1>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="add-todo-box">
+
+        <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <h2 class="title is-5">New note</h2>
+
+            <div class="field is-grouped" style="margin: 0">
+                <p class="control is-expanded">
+                    <input ngModel #todoTextField="ngModel" required minlenght="2" name="text" class="input" type="text" placeholder="Type toDo text here..." />
+                </p>
+                <p class="control">
+                    <button type="submit" class="button alt-gradient-button">
+                        <i class="material-icons">add</i>
+                        Add
+                    </button>
+                </p>
+            </div>
+
+            <div *ngIf="todoTextField.invalid">
+                <p class="help is-danger" *ngIf="todoTextField.errors!.required">Please enter the text of your todo</p>
+                <p class="help is-danger" *ngIf="todoTextField.errors!.minlength">Todo text must be at least 2 characters</p>  
+          
+            </div>
+        </form>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+
+        <div class="todos-list">
+
+            <app-todo-item 
+            *ngFor="let todo of todos" 
+            [todo]="todo"
+            (todoClicked)="toggleCompleted(todo)"
+            (editClicked)="editTodo(todo)"
+        ></app-todo-item>
+
+        </div>
+    </div>
+</section>
