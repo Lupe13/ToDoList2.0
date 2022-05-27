@@ -11,6 +11,7 @@ import { EditTodoDialogComponent } from './edit-todo-dialog/edit-todo-dialog.com
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { ToolTipDirective } from './shared/tool-tip.directive';
+import { ToolTipSingletonDirective } from './shared/tool-tip-singleton.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ToolTipDirective } from './shared/tool-tip.directive';
     TodosComponent,
     TodoItemComponent,
     EditTodoDialogComponent,
-    ToolTipDirective
+    ToolTipDirective,
+    ToolTipSingletonDirective
   ],
   imports: [
     BrowserModule,
