@@ -8,7 +8,7 @@
     </div>
 </section>
 
-<div class="container">
+<div class="container add-todo-box-container">
     <div class="add-todo-box">
 
         <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
@@ -26,11 +26,7 @@
                 </p>
             </div>
 
-            <div *ngIf="todoTextField.invalid">
-                <p class="help is-danger" *ngIf="todoTextField.errors!.required">Please enter the text of your todo</p>
-                <p class="help is-danger" *ngIf="todoTextField.errors!.minlength">Todo text must be at least 2 characters</p>  
-          
-            </div>
+           
         </form>
     </div>
 </div>
@@ -45,6 +41,8 @@
             [todo]="todo"
             (todoClicked)="toggleCompleted(todo)"
             (editClicked)="editTodo(todo)"
+            (deleteClicked)="deleteTodo(todo)"
+
         ></app-todo-item>
 
         </div>
