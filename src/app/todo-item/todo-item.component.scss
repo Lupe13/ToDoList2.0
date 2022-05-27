@@ -37,7 +37,7 @@
         font-size: 20px;
         margin: auto;
 
-        color: #eee;
+        color: rgb(195, 22, 195);
 
         // hide by default
         opacity: 0;
@@ -48,14 +48,14 @@
 }
 
 .todo-item:hover .check-box {
-    background: #eee; 
+    background: rgb(177, 253, 174); 
     i.material-icons {
         opacity: 0.28;
     }
 }
 
 .todo-item.completed .check-box {
-    background: rgba(29, 93, 156, 0.8);
+    background: rgba(168, 124, 255, 0.8);
     border-color: #eee;
 
     i.material-icons {
@@ -128,5 +128,5 @@
 }
 
 .todo-controls-box .todo-control-button.is-danger:active i.material-icons {
-    color: rgb(182, 43, 43);
+    color: rgb(45, 182, 43);
 }
